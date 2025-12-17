@@ -1,1 +1,192 @@
+Credit Card Fraud Detection
 
+An End-to-End Machine Learning System with Explainability and API Deployment
+
+1. Project Overview
+
+This project presents a complete, production-oriented Credit Card Fraud Detection system built using machine learning techniques on highly imbalanced transactional data.
+
+The work demonstrates the full data science lifecycle, including exploratory analysis, advanced modeling, class-imbalance handling, explainable AI (XAI), and deployment through a RESTful API.
+
+The project is designed to meet industry standards and is suitable for:
+
+Data Scientist / ML Engineer roles
+
+Master’s programs in Data Science, Artificial Intelligence, or Analytics
+
+2. Problem Statement
+
+Credit card fraud represents a critical challenge due to:
+
+Extreme class imbalance (fraud cases < 0.2%)
+
+High cost of false negatives (missed fraud)
+
+Need for model interpretability in financial systems
+
+The objective is to accurately detect fraudulent transactions while maintaining transparency in model decisions.
+
+3. Dataset Description
+
+Source: European cardholders transaction dataset
+
+Total transactions: ~284,000
+
+Fraudulent transactions: ~0.17%
+
+Features:
+
+V1–V28: PCA-transformed numerical features
+
+Amount: Transaction amount
+
+Class: Target variable
+
+0 → Legitimate
+
+1 → Fraud
+
+No personally identifiable information is included in the dataset.
+
+4. Exploratory Data Analysis (EDA)
+
+Key insights derived during EDA:
+
+Severe class imbalance confirmed
+
+Fraudulent transactions show distinct patterns in certain PCA components (e.g., V14, V12, V10)
+
+Transaction amount alone is not sufficient for fraud detection
+
+EDA results guided model selection and evaluation strategy.
+
+5. Data Preprocessing
+
+Feature scaling using StandardScaler
+
+Stratified train-test split to preserve class distribution
+
+SMOTE (Synthetic Minority Over-sampling Technique) applied only on training data to address imbalance
+
+Care taken to avoid data leakage
+
+6. Model Development and Evaluation
+Models Implemented
+
+Logistic Regression (baseline)
+
+Random Forest Classifier
+
+XGBoost Classifier
+
+Evaluation Metrics
+
+ROC-AUC
+
+Precision, Recall, F1-Score
+
+Precision-Recall AUC (critical for imbalanced data)
+
+Performance Summary
+Model	ROC-AUC	Fraud Recall
+Logistic Regression	~0.97	High (post-SMOTE)
+Random Forest	~0.97	~82%
+XGBoost	~0.98	~87%
+
+XGBoost provided the best overall balance between recall and precision, while Random Forest offered strong stability and interpretability.
+
+7. Explainable AI (SHAP)
+
+To ensure transparency and trustworthiness:
+
+SHAP feature importance plots identify key drivers of fraud detection
+
+SHAP force plots explain individual fraud predictions
+
+SHAP dependence plots analyze feature interactions
+
+Explainability is crucial for financial and regulatory environments and was treated as a first-class requirement in this project.
+
+8. Model Inference Example
+
+Example prediction for a high-risk transaction:
+
+{
+  "fraud_probability": 0.99,
+  "fraud_prediction": 1
+}
+
+
+This indicates a high likelihood of fraud based on learned feature patterns.
+
+9. API Deployment
+
+The trained model is deployed using FastAPI, enabling real-time inference.
+
+Endpoint
+POST /predict
+
+Input
+
+Transaction features (V1–V28, Amount) in JSON format.
+
+Output
+
+Fraud probability
+
+Binary fraud prediction
+
+This architecture reflects real-world ML system deployment practices.
+
+10. Project Structure
+Credit_Card_Fraud_Detection/
+│
+├── app.py
+├── README.md
+├── requirements.txt
+│
+├── artifacts/
+│   ├── fraud_rf_model.pkl
+│   ├── scaler.pkl
+│   └── feature_columns.json
+│
+├── Notebooks/
+│   └── credit_card_fraud_detection.ipynb
+│
+└── data/
+    └── creditcard.csv
+
+11. Technologies Used
+
+Python
+
+Pandas, NumPy
+
+Scikit-learn
+
+Imbalanced-learn (SMOTE)
+
+XGBoost
+
+SHAP
+
+FastAPI
+
+12. Key Skills Demonstrated
+
+Handling highly imbalanced datasets
+
+Advanced classification modeling
+
+Model evaluation for rare-event detection
+
+Explainable AI (XAI)
+
+ML system deployment using REST APIs
+
+End-to-end project design
+
+13. Author
+
+Abhishek Darsan H
+Data Science & AI Enthusiast
