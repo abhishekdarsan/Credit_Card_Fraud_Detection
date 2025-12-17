@@ -1,0 +1,12 @@
+# Model artifacts
+*.pkl
+
+# Large data files
+data/creditcard.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
