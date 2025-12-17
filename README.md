@@ -112,5 +112,15 @@ Example prediction for a high-risk transaction:
   "fraud_prediction": 1
 }
 
+Model Artifacts
+
+Due to GitHub file size limitations, trained model artifacts (.pkl) are not stored in the repository.
+
+The models can be reproduced by running the notebook:
+
+Notebooks/credit_card_fraud_detection.ipynb
+
+
+All preprocessing steps, training logic, and evaluation are fully reproducible.
 
 
