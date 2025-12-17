@@ -112,13 +112,15 @@ Example prediction for a high-risk transaction:
   "fraud_prediction": 1
 }
 
-Model Artifacts
+## Reproducibility Notes
 
-Due to GitHub file size limitations, trained model artifacts (.pkl) are not stored in the repository.
+Due to size constraints, the full dataset and trained model are not included.
 
-The models can be reproduced by running the notebook:
+To reproduce results:
+1. Download the dataset from Kaggle (Credit Card Fraud Detection)
+2. Place it in the project root or data folder
+3. Run the notebook: Notebooks/01_fraud_detection.ipynb
 
-Notebooks/credit_card_fraud_detection.ipynb
 
 
 All preprocessing steps, training logic, and evaluation are fully reproducible.
