@@ -113,7 +113,7 @@ Example prediction for a high-risk transaction:
 }
 
 
-API Deployment
+## API Deployment
 
 The trained model is deployed using FastAPI, enabling real-time inference.
 Endpoint
@@ -131,7 +131,7 @@ Binary fraud prediction
 
 This architecture reflects real-world machine learning deployment practices.
 
-Technologies Used
+## Technologies Used
 
 Python
 
@@ -147,7 +147,7 @@ SHAP
 
 FastAPI
 
-Key Skills Demonstrated
+## Key Skills Demonstrated
 
 Handling highly imbalanced datasets
 
@@ -161,7 +161,7 @@ Machine learning system deployment using REST APIs
 
 End-to-end project design
 
-Author
+## Author
 
 Abhishek Darsan H
 Data Science & AI Enthusiast
